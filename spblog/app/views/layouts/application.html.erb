@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <nav id="navbar">
+        <ul>
+          <li><%= link_to 'Home', {:controller => 'pages', :action => 'home'} %></li>
+          <li><%= link_to 'About', {:controller => 'pages', :action => 'about'} %></li>
+          <li><%= link_to 'Directions', {:controller => 'pages', :action => 'directions'} %></li>
+          <li><%= link_to 'Articles', {:controller => 'articles', :action => 'index'} %></li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </div>
+</body>
+</html>
